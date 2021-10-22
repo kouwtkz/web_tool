@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+    <p>自動的にリダイレクトされます… (ジャンプしない場合は<a href="/tool">こちら</a>)</p>
+</body>
+<script>
+    location.href="/tool"+location.pathname.match(/^\/[^/]*(.*)$/)[1];
+</script>
+</html>

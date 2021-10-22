@@ -365,10 +365,12 @@
         if(file_elem.files.length > 0) {
             var reader = new FileReader();
             reader.onload = function (theFile) {
-                document.getElementById("inout_area").value = theFile.target.result;
-                in_json();
+                document.getElementById("inout_area").value = 
+                    JSON.stringify(JSON.parse(theFile.target.result));
+                // in_json();
             }
-            reader.readAsText(file_elem.files[0], "shift-jis");
+            reader.readAsText(file_elem.files[0], "utf-8");
+            // reader.readAsText(file_elem.files[0], "shift-jis");
         }
     };
     var set_json = function() {
